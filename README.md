@@ -1,13 +1,17 @@
 # my_RTL_designs
 
-** Usage: ** 
+## Usage
 
-''' bash
+Compile and run a module with its testbench:
+
+```bash
 iverilog -g2012 -o module.vvp module.sv module_tb.sv
 vvp module.vvp
-''' bash
+```
 
-include the following in your tb so that a viewable .vcd file is generated as well
- 
-    $dumpfile("module.vcd");
-    $dumpvars(0, module_tb);
+Include the following in your testbench to generate a viewable `.vcd` waveform file:
+
+```systemverilog
+$dumpfile("module.vcd");
+$dumpvars(0, module_tb);
+```
